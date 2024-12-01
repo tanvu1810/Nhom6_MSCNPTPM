@@ -1,0 +1,31 @@
+Bước 1: Tạo môi trường ảo:
+D:\TX2\Object-Detection-MobileNet>python -m venv venv
+Bước 2: Kích hoạt:
+D:\TX2\Object-Detection-MobileNet>venv\Scripts\activate
+Bước 3: Kiểm tra đường dẫn:
+(venv) D:\TX2\Object-Detection-MobileNet>which python
+=> Nó sẽ hiển thị như sau:
+/d/TX2/Object-Detection-MobileNet/venv/Scripts/python
+Bước 4:Kiểm tra phiên bản python:
+(venv) D:\TX2\Object-Detection-MobileNet>python --version
+=> Python 3.12.4
+Bước 5: Kiểm tra danh sách:
+(venv) D:\TX2\Object-Detection-MobileNet>pip list
+Nếu phiên bản cũ ta cần cập nhật:
+(venv) D:\TX2\Object-Detection-MobileNet>python.exe -m pip install --upgrade pip
+Bước 6: Để hợp nhất phiên bản:
+(venv) D:\TX2\Object-Detection-MobileNet>pip freeze
+Bước 7: Chạy file để cài đặt thư viện và môi trường:
+(venv) D:\TX2\Object-Detection-MobileNet>pip install -r requirements.txt
+
+
+Để chạy câu lệnh nhận dạng hình ảnh ta sử dụng câu lệnh:
+./image_object_detection.py -i #path to the input image -p #path to Caffe deploy prototxt file -m #path to the Caffe pre-trained model
+
+Ví dụ chạy trên môi trường ảo:
+(venv) D:\TX2\Object-Detection-MobileNet>python image_object_detection.py -i anh.jpg -p MobileNetSSD_deploy.prototxt.txt -m MobileNetSSD_deploy.caffemodel
+
+Để chạy câu lệnh nhận dạng video ta sử dụng câu lệnh:
+./video_object_detection.py -p #path to Caffe deploy prototxt file -m #path to the Caffe pre-trained model
+python video_object_detection.py -p MobileNetSSD_deploy.prototxt.txt -m MobileNetSSD_deploy.caffemodel
+
